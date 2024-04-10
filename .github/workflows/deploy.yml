@@ -63,11 +63,11 @@ jobs:
       - name: Output contents
         run: ls
       - name: Deploy site
-        run: echo "Deploying..."
-  information:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-      - name: Run custom javascript action
         uses: ./.github/actions/deploy-s3-javascript
+        env:
+          AWS_ACCESS_KEY_ID: <my aws access key>
+          AWS_SECRET_ACCESS_KEY: <my aws sceret access key>
+        with:
+          bucket: <my s3 bucket name> 
+          bucket-region: <my s3 bucket region>
+          dist-folder: ./dist
