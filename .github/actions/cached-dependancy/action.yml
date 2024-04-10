@@ -1,6 +1,6 @@
 name: Get & cache dependencies
 description: Get the dependancies (npm install) and cache them for future use.
-run:
+runs:
   using: 'composite'
   steps:
     - name: Cache dependencies
